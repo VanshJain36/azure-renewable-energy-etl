@@ -1,0 +1,57 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Run Bronze to Silver",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Workspace/Users/vanshkrjain@gmail.com/1_Bronze_to_Silver"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks_renewable_project",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Run Silver to Gold",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "Run Bronze to Silver",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Workspace/Users/vanshkrjain@gmail.com/2_Silver_to_Gold"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks_renewable_project",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-04-15T18:54:08Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
