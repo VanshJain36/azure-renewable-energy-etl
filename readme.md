@@ -1,5 +1,5 @@
 Initialized by Azure Data Factory!
-
+``` mermaid
 flowchart TD
     subgraph Bronze Layer [Raw Data]
         A[(telemetry_data.csv)]
