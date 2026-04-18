@@ -18,7 +18,6 @@ graph LR
     style C fill:#fcebc4,stroke:#333,stroke-width:2px
     style E fill:#d3ffd3,stroke:#333,stroke-width:2px
 
-Data Transformation (Medallion Architecture)
 
 flowchart TD
     subgraph Bronze Layer [Raw Data]
