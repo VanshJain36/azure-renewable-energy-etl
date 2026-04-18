@@ -1,0 +1,9 @@
+{
+	"name": "renewable-project",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ba12023b-973e-4ac1-a091-45eb1d440a7e",
+		"tenantId": "e33ced17-d40d-4536-832e-831d934b3b1d"
+	}
+}
